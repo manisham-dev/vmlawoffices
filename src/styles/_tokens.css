@@ -1,0 +1,17 @@
+
+body {
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-sans);
+}
+
+.card {
+  background: var(--clr-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary {
+  background: var(--clr-accent);
+  color: #000;
+}

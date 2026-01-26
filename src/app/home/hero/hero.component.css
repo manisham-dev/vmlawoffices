@@ -1,0 +1,5 @@
+
+@use '../../../styles/tokens' as *;
+.hero__inner { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; }
+.hero__copy h1 { font-size: clamp(2rem, 1.3rem + 2.5vw, 3rem); margin: 0 0 .75rem; }
+.hero__visual { min-height: 280px; border-radius: $radius-md; background: radial-gradient(60% 80% at 20% 20%, rgba(200,168,107,.35), transparent 60%), linear-gradient(135deg, #151a22, #0d1014); box-shadow: $shadow; }

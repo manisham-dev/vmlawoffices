@@ -1,0 +1,238 @@
+.about-mn {
+    padding: 0px;
+}
+
+section {
+    width: 100%;
+    float: left;
+}
+
+.about-banner {
+    width: 100%;
+    float: left;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+
+.desktop-view {
+    display: block;
+}
+.img-fluid {
+    width: 100%;
+}
+img, svg {
+    vertical-align: middle;
+}
+
+.bnr__cntnt {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.vrtclcntr_bx {
+    float: left;
+    width: 100%;
+    height: 100%;
+    display: table;
+    position: relative;
+}
+
+.vrtclcntr_bxinr {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 1180px) {
+    .container-custom {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.about_banner_txt {
+    font-size: 22px;
+    color: #fff;
+}
+.about_banner_txt {
+    padding-left: 5%;
+    width: 60%;
+    float: left;
+}
+
+@media only screen and (max-width: 1400px) {
+    .bnr_heading {
+        font-size: 50px;
+        color: #fff;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .bnr_heading {
+        font-size: 62px;
+        color: #fff;
+        line-height: 60px;
+    }
+}
+.bnr_heading {
+    font-family: 'dm_serif_displayregular';
+    font-size: 100px;
+    color: #fff;
+    line-height: 90px;
+}
+
+h1, h2, h3, h4, h5, h6, a, p, span {
+    text-decoration: none !important;
+}
+h2 {
+    font-size: calc(1.325rem + .9vw);
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* image section end  */
+
+/* section 2 start */
+
+.estbshed-mn {
+    /* background: url(../images/establshed-bg.png) left top no-repeat; */
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+}
+
+@media (min-width: 768px) {
+    .col-md-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+.row>* {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
+}
+
+.estbshed-cnt p:last-child {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+@media only screen and (max-width: 1500px) {
+    .estbshed-cnt p {
+        font-size: 15px;
+    }
+}
+.estbshed-cnt p {
+    font-family: 'poppinsregular';
+    font-size: 18px;
+    color: #2c2524;
+    padding-bottom: 20px;
+    text-align: center;
+}
+h1, h2, h3, h4, h5, h6, a, p, span {
+    text-decoration: none !important;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+/* section 2 end  */
+
+
+/* section 3 start */
+
+
+.litigation-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.litigation-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.litigation-image {
+  flex: 0 0 45%;
+}
+
+.litigation-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.litigation-text {
+  flex: 1;
+  padding-top: 200px;
+}
+
+.section-title {
+  font-family: 'dm_serif_displayregular', serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-description {
+  font-family: 'poppinsregular', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: left;         /* 👈 centers the text */
+  max-width: 700px;           /* optional: limits width for better readability */
+  margin-left: auto;          /* 👈 centers the block horizontally */
+  margin-right: auto;
+}
+
+
+.practice-areas button {
+  display: inline-block;
+  margin: 5px 10px 5px 0;
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.practice-areas button:hover {
+  background-color: #0055a5;
+}

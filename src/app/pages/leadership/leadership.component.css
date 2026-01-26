@@ -1,0 +1,40 @@
+
+.leader{display:flex;gap:1rem;align-items:center}
+.leader .abc{width:70px;height:70px;border-radius:50%;object-fit:cover;background:#222}
+
+
+img { position: relative; z-index: 10; }
+
+.hero-bg {
+  background: url('../../../assets/img/image3.png') no-repeat center/cover;
+}
+
+
+.card.leader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: bisque;
+}
+
+h3 {
+  color: black;
+}
+
+.card.leader img {
+  width: 100px;
+  height: auto;
+}
+
+
+.card.leader img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+.section {
+  background-color: #8A4B27;
+}

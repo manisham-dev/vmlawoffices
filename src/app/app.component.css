@@ -1,0 +1,35 @@
+
+/* Ensure the root can size to viewport height */
+html, body {
+  height: 100%;
+}
+
+/* App root should be a vertical flex container */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh; /* or 100vh */
+}
+
+/* Header sits naturally at the top */
+app-header {
+  flex: 0 0 auto;
+}
+
+/* Main takes all remaining space between header and footer */
+.main {
+  flex: 1 1 auto;
+  min-height: 0;       /* prevents overflow issues in some browsers */
+  position: relative;  /* new stacking context, helpful if children use z-index */
+  z-index: 0;          /* ensure it doesn't get covered by accidental high z-index siblings */
+  /* if you use a max-width container, do it here, not on app-root */
+  /* max-width: 1200px; margin: 0 auto; padding-inline: 16px; */
+}
+
+/* Footer stays after main and does not overlay it */
+app-footer {
+  flex: 0 0 auto;
+  position: static; /* important: NOT fixed/absolute */
+  z-index: 1;       /* lower/equal unless you need dropdowns above */
+  width: 100%;
+}
