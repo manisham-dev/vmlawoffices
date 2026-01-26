@@ -18,6 +18,24 @@ section {
 .desktop-view {
     display: block;
 }
+body {
+  margin: 0;
+  overflow-x: hidden; /* Removes horizontal scrollbar */
+}
+
+.bnrbx {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.bnrbx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills the container without distortion */
+  display: block;
+}
+
 .img-fluid {
     width: 100%;
 }
@@ -115,7 +133,6 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-wrap: wrap;
     margin-top: calc(var(--bs-gutter-y) * -1);
-    margin-right: calc(var(--bs-gutter-x) * -.5);
     margin-left: calc(var(--bs-gutter-x) * -.5);
 }
 
@@ -148,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
 .estbshed-cnt p {
     font-family: 'poppinsregular';
     font-size: 18px;
-    color: #2c2524;
+    color: #080808;
     padding-bottom: 20px;
     text-align: center;
 }
@@ -167,72 +184,131 @@ p {
 /* section 3 start */
 
 
-.litigation-section {
-  padding: 60px 0;
-  background-color: #f8f9fa;
-}
+  .expertise-container {
+      display: flex;              /* Enables side-by-side layout */
+      align-items: center;        /* Vertically aligns image and text */
+      justify-content: space-between; /* Adds spacing between image and text */
+      gap: 40px;                  /* Space between image and text */
+      padding: 40px;
+    }
 
-.container {
-  width: 85%;
-  margin: 0 auto;
-}
+    .expertise-image-section img {
+      max-width: 400px;           /* Controls image size */
+      border-radius: 10px;        /* Optional: rounded corners */
+    }
 
-.litigation-content {
+    .expertise-content-section {
+      flex: 1;                    /* Text takes remaining space */
+    }
+
+    .expertise-heading {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #2c2524;
+      text-align: center;
+    }
+
+    .expertise-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #2c2524;
+    }
+
+
+    .expertise-tag:hover {
+      background-color: #34495e;
+    }
+
+    .section3{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .expertise-tags-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 10px;
+}
+
+.expertise-tag {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #2c3e50;
+  color: white;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: default; /* prevents pointer hand */
+  user-select: none; /* prevents text selection */
+}
+
+
+/* section 4 start  */
+
+.section4 {
+  padding: 40px;
+  padding-left: 100px;
+  padding-right: 150px;
+  background-color: #f9f9f9;
+}
+
+.resolution-container {
+  display: flex;
   align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* ensures responsiveness */
 }
 
-.litigation-image {
-  flex: 0 0 45%;
-}
-
-.litigation-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.litigation-text {
+.resolution-content-section {
   flex: 1;
-  padding-top: 200px;
+  min-width: 300px;
 }
 
-.section-title {
-  font-family: 'dm_serif_displayregular', serif;
-  font-size: 36px;
+.resolution-text-box {
+  max-width: 800px;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.resolution-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.resolution-description {
+  font-size: 1rem;
+  line-height: 1.6;
   margin-bottom: 20px;
   color: #333;
 }
 
-.section-description {
-  font-family: 'poppinsregular', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 30px;
-  text-align: left;         /* 👈 centers the text */
-  max-width: 700px;           /* optional: limits width for better readability */
-  margin-left: auto;          /* 👈 centers the block horizontally */
-  margin-right: auto;
+.resolution-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-
-.practice-areas button {
-  display: inline-block;
-  margin: 5px 10px 5px 0;
-  padding: 10px 16px;
-  font-size: 16px;
-  background-color: #003366;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.resolution-tag {
+  background-color: #2c3e50;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  user-select: none;
 }
 
-.practice-areas button:hover {
-  background-color: #0055a5;
+.resolution-image-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.resolution-image-section img {
+  width: 100%;
+  height: 600px;
+  border-radius: 10px;
+  display: block;
 }
