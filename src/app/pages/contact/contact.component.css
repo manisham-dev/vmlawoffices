@@ -13,7 +13,7 @@
 
 .contact-section {
   padding: 20px 20px;
-  background-color: #8A4B27;
+  background-color: #d18356;
   font-family: 'Inter', system-ui, sans-serif;
   color: #0b0b0b;   /* FIX: light text on dark background */
 }
@@ -59,7 +59,7 @@
   padding: 32px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); */
   display: flex;
   flex-direction: column;
 }
@@ -265,7 +265,8 @@ address {
     flex-wrap: wrap;
     margin-top: calc(var(--bs-gutter-y) * -1);
     margin-right: calc(var(--bs-gutter-x) * -.5);
-    margin-left: calc(var(--bs-gutter-x) * -.5);
+    /* margin-left: calc(var(--bs-gutter-x) * -.5); */
+    padding-top: 60px;
 }
 
 .ur-office-txt {

@@ -6,35 +6,7 @@
     </header>
 
     <div class="contact-layout-grid">
-      <!-- Form Card (Full width on top) -->
-      <div class="card card--main-form">
-        <div class="card-tag">SEND A MESSAGE</div>
-        <form class="contact-form" (submit)="onSubmit($event)">
-          <div class="form-grid">
-            <div class="field">
-              <label for="full-name">Full name</label>
-              <input id="full-name" type="text" placeholder="e.g. Jane Doe" name="name" required />
-            </div>
-            <div class="field">
-              <label for="phone">Phone</label>
-              <input id="phone" type="tel" placeholder="+91 00000 00000" name="phone" />
-            </div>
-          </div>
-
-          <div class="field full-width">
-            <label for="message">How can we help?</label>
-            <textarea id="message" rows="4" placeholder="Briefly describe your matter..." name="message" required></textarea>
-          </div>
-
-          <div class="actions">
-            <button class="btn btn-primary" type="submit">Submit Request</button>
-            <p class="disclaimer">
-              Submission does not create a lawyer–client relationship. 
-              <strong>Do not include confidential information.</strong>
-            </p>
-          </div>
-        </form>
-      </div>
+     
 
       <!-- New Wrapper to keep Office Cards parallel -->
       <div class="office-cards-row row">
@@ -65,6 +37,35 @@
         </div>
       </div> <!-- End office-cards-row -->
       
+       <!-- Form Card (Full width on top) -->
+      <div class="card card--main-form">
+        <div class="card-tag">SEND A MESSAGE</div>
+        <form class="contact-form" (submit)="onSubmit($event)">
+          <div class="form-grid">
+            <div class="field">
+              <label for="full-name">Full name</label>
+              <input id="full-name" type="text" placeholder="e.g. Jane Doe" name="name" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" type="tel" placeholder="+91 00000 00000" name="phone" />
+            </div>
+          </div>
+
+          <div class="field full-width">
+            <label for="message">How can we help?</label>
+            <textarea id="message" rows="4" placeholder="Briefly describe your matter..." name="message" required></textarea>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Submit Request</button>
+            <p class="disclaimer">
+              Submission does not create a lawyer–client relationship. 
+              <strong>Do not include confidential information.</strong>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </section>

@@ -206,13 +206,14 @@ p {
       margin-bottom: 20px;
       color: #2c2524;
       text-align: center;
+      text-decoration: underline !important;
     }
 
     .expertise-description {
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 20px;
-      color: #2c2524;
+      color: #000000;
     }
 
 
@@ -249,7 +250,7 @@ p {
   padding: 40px;
   padding-left: 100px;
   padding-right: 150px;
-  background-color: #f9f9f9;
+      background-color: #c3bdbd;
 }
 
 .resolution-container {
@@ -275,13 +276,14 @@ p {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #2c3e50;
+  text-decoration: underline !important;
 }
 
 .resolution-description {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: #333;
+  color: #000000;
 }
 
 .resolution-tags-container {
@@ -311,4 +313,10 @@ p {
   height: 600px;
   border-radius: 10px;
   display: block;
+}
+
+.section5{
+    background-color: #484646;
+    padding-left: 100px;
+        padding-right: 100px;
 }
