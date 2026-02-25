@@ -1,5 +1,5 @@
 
-:root{
+:root {
   --container: min(1200px, 92vw);
   --bg-dark: #1E2124;
   --bg-dark-2: #17191C;
@@ -13,96 +13,34 @@
 }
 
 *{ box-sizing: border-box; }
-html, body{ height: 100%; }
-body{
-  margin: 0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  color: var(--ink);
-  background: #fff;
-}
 
-/* Utilities */
 .container{ width: var(--container); margin-inline: auto; }
 
-/* ---------- HERO ---------- */
-.hero{
+/* FILTERS / TABS */
+.filters {
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(193, 35, 35, 0.35)),
+    url('../../../assets/img/insights.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-block: clamp(40px, 7vw, 80px);
+}
+
+.filters .container {
   position: relative;
-  background: radial-gradient(1200px 600px at 85% -10%, rgba(255,255,255,0.06), transparent 70%),
-              radial-gradient(800px 400px at 20% 70%, rgba(255,255,255,0.04), transparent 70%),
-              var(--bg-dark);
-  color: #fff;
-  padding-block: clamp(56px, 10vw, 120px) 48px;
-  overflow: hidden;
+  backdrop-filter: saturate(1.1);
 }
 
-.hero-inner{
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: clamp(16px, 4vw, 48px);
-}
-
-.page-title{
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  font-size: clamp(32px, 5vw, 56px);
-  letter-spacing: 0.2px;
-  margin: 0;
-}
-
-.hero-right{
-  display: grid;
-  justify-items: end;
-}
-
-.hero-figure{
-  width: clamp(260px, 36vw, 460px);
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  background: #0f1113;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.45),
-              inset 0 0 0 1px rgba(255,255,255,0.06);
-}
-
-.hero-figure img{
-  width: 120%;
-  height: 120%;
-  object-fit: cover;
-  transform: translate(-6%, -2%) scale(1.05);
-  filter: saturate(1.05) contrast(1.05);
-}
-
-/* Subtle topo pattern overlay on hero */
-.hero-pattern{
-  position: absolute; inset: 0;
-  background-image:
-    radial-gradient(transparent 60%, rgba(0,0,0,0.18)),
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800"><defs><pattern id="p" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M100 0C150 20 180 60 200 100M0 100C40 120 80 150 100 200M100 100c20 20 40 40 100 60" fill="none" stroke="%23ffffff10" stroke-width="1"/></pattern></defs><rect width="800" height="800" fill="url(%23p)"/></svg>');
-  mix-blend-mode: overlay;
-  pointer-events: none;
-}
-
-/* ---------- FILTERS / TABS BAR ---------- */
-.filters{
-  background: #fff;
-}
-
-.filters .container{
-  position: relative;
-}
-
-.filters-inner{
+.filters-inner {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 16px;
-  padding-block: 18px;
+  gap: 20px;
+  padding-block: clamp(14px, 2.5vw, 24px);
 }
 
-.tabs{
+.tabs {
   display: inline-flex;
   align-items: center;
   gap: 16px;
@@ -112,7 +50,7 @@ body{
   position: relative;
 }
 
-.tab{
+.tab {
   appearance: none;
   background: transparent;
   border: 0;
@@ -125,11 +63,16 @@ body{
   position: relative;
 }
 
-.tab.active{
+.tab.active {
   font-weight: 600;
 }
 
-.tab-divider{
+.filters .tab,
+.filters .tab.active {
+  color: #ffffff;
+}
+
+.tab-divider {
   width: clamp(80px, 12vw, 160px);
   height: 1px;
   background: #BEB7AE;
@@ -138,12 +81,16 @@ body{
   opacity: .7;
 }
 
-.search{
+.filters .tab-divider {
+  background: rgba(255,255,255,0.6);
+}
+
+.search {
   position: relative;
   min-width: 260px;
 }
 
-.search input{
+.search input {
   width: 100%;
   padding: 8px 32px 8px 10px;
   border: 1px solid var(--tab-stroke);
@@ -153,30 +100,37 @@ body{
   outline: none;
 }
 
-.search input::placeholder{ color: #9B948B; }
-.search-icon{
+.search input::placeholder { color: #9B948B; }
+
+.search-icon {
   position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
   font-size: 13px; opacity: .6;
 }
 
-.filters-border{
-  height: 2px;
-  background: linear-gradient(90deg, transparent 4%, #BEB7AE 10%, #BEB7AE 90%, transparent 96%);
+.filters .search input {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #222;
 }
 
-/* ---------- CONTENT GRID ---------- */
-.content{
+.filters-border {
+  height: 2px;
+  background: linear-gradient(90deg, transparent 4%, rgba(255,255,255,0.6) 10%, rgba(255,255,255,0.6) 90%, transparent 96%);
+}
+
+/* CONTENT GRID */
+.content {
   position: relative;
   padding-block: 36px 72px;
 }
 
-.cards{
+.cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 36px;
 }
 
-.card{
+.card {
   background: var(--card-bg);
   border: 1px solid var(--stroke);
   border-radius: 4px;
@@ -184,7 +138,7 @@ body{
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-.thumb{
+.thumb {
   position: relative;
   display: block;
   background: #2c1f18;
@@ -192,14 +146,14 @@ body{
   overflow: hidden;
 }
 
-.thumb img{
+.thumb img {
   width: 100%; height: 100%;
   object-fit: cover;
   opacity: .9;
   filter: brightness(.65);
 }
 
-.thumb .brand{
+.thumb .brand {
   position: absolute;
   left: 20px; bottom: 16px;
   color: #EDE7E2;
@@ -209,24 +163,24 @@ body{
   text-transform: uppercase;
 }
 
-.card-body{
+.card-body {
   padding: 18px 16px 14px;
 }
 
-.card-title{
+.card-title {
   font: 600 14.5px/1.4 Inter, sans-serif;
   color: var(--ink);
   margin: 0 0 8px 0;
 }
 
-.card-excerpt{
+.card-excerpt {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.6;
   margin: 0 0 14px 0;
 }
 
-.card-meta{
+.card-meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -236,15 +190,16 @@ body{
   padding-top: 10px;
 }
 
-.readmore{
+.readmore {
   text-decoration: none;
   font-weight: 600;
   color: var(--ink-2);
 }
-.readmore:hover{ color: var(--brand-brown); }
 
-/* ---------- BACKGROUND CONTOUR OVERLAY (page) ---------- */
-.page-pattern{
+.readmore:hover { color: var(--brand-brown); }
+
+/* BACKGROUND CONTOUR OVERLAY */
+.page-pattern {
   position: fixed;
   inset: 0;
   z-index: -1;
@@ -255,80 +210,60 @@ body{
   pointer-events: none;
 }
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 1024px){
-  .hero-inner{ grid-template-columns: 1fr; }
-  .hero-right{ justify-items: start; }
-  .tabs{ justify-content: start; margin-inline: 0; }
-}
-
-@media (max-width: 860px){
-  .filters-inner{ grid-template-columns: 1fr; }
-  .search{ min-width: 100%; }
-  .cards{ grid-template-columns: 1fr; }
-}
-
-
-/* Bigger, image-backed Filters section */
-.filters{
-  /* Background image + dark overlay for contrast */
-  background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(193, 35, 35, 0.35)),
-    url('../../../assets/img/insights.png'); /* <-- replace with your path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* Make the section taller */
-  padding-block: clamp(40px, 7vw, 80px); /* top/bottom padding */
-}
-
-/* Optional: add an inner translucent panel feel */
-.filters .container{
-  backdrop-filter: saturate(1.1);
-}
-
-/* Make text & tabs readable on darker bg */
-.filters .tab,
-.filters .tab.active{
-  color: #ffffff;                 /* tabs text */
-}
-.filters .tab-divider{
-  background: rgba(255,255,255,0.6);
-}
-.filters .filters-border{
-  background: linear-gradient(90deg, transparent 4%, rgba(255,255,255,0.6) 10%, rgba(255,255,255,0.6) 90%, transparent 96%);
-}
-
-/* Space the inner row more generously (taller feel) */
-.filters-inner{
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 20px;
-  padding-block: clamp(14px, 2.5vw, 24px);
-}
-
-/* Search field on image: increase contrast */
-.filters .search input{
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(255,255,255,0.6);
-  color: #222;
-}
-
-/* Responsive: stack on small screens and keep height comfortable */
-@media (max-width: 860px){
-  .filters-inner{
-    grid-template-columns: 1fr;
-    justify-items: start;
-  }
-  .filters{
-    padding-block: 48px;
-  }
-}
-
 .ptext {
   padding: 20px 20px;
   font-family: 'Inter', system-ui, sans-serif;
-  color: #e6e3e3 !important;   /* FIX: light text on dark background */
-  size: 20;
+  color: #e6e3e3 !important;
+  font-size: 20px;
+}
+
+/* ===== RESPONSIVE: Tablet (768px - 1024px) ===== */
+@media (max-width: 1024px) {
+  .tabs {
+    justify-content: start;
+    margin-inline: 0;
+  }
+
+  .content {
+    padding-block: 28px 48px;
+  }
+
+  .cards {
+    gap: 24px;
+  }
+}
+
+/* ===== RESPONSIVE: Mobile (< 768px) ===== */
+@media (max-width: 768px) {
+  .filters-inner {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .filters {
+    padding-block: 48px;
+  }
+
+  .search {
+    min-width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .content {
+    padding-block: 24px 40px;
+  }
+
+  .card-title {
+    font-size: 14px;
+  }
+
+  .thumb .brand {
+    left: 12px;
+    bottom: 10px;
+    font-size: 10px;
+  }
 }

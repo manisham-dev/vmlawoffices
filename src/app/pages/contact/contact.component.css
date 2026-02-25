@@ -1,7 +1,6 @@
-/* Base Variables & Reset */
 :root {
   --primary: #1a1a1a;
-  --accent: #c5a059; /* Gold/Professional accent */
+  --accent: #c5a059;
   --text-muted: #666;
   --bg-light: #f8f9fa;
   --white: #ffffff;
@@ -10,21 +9,18 @@
   --transition: all 0.3s ease;
 }
 
-
 .contact-section {
   padding: 20px 20px;
   background-color: #d18356;
   font-family: 'Inter', system-ui, sans-serif;
-  color: #0b0b0b;   /* FIX: light text on dark background */
+  color: #0b0b0b;
 }
-
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Header */
 .section-header {
   margin-bottom: 20px;
   text-align: center;
@@ -46,30 +42,38 @@
   margin: 0;
 }
 
-/* Responsive Grid Layout */
 .contact-layout-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 24px;
 }
 
-/* Card Styling */
+.office-cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
 .card {
   background: var(--white);
   padding: 32px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); */
   display: flex;
   flex-direction: column;
 }
 
-/* Main Form Card Spans 2 Columns */
 .card--main-form {
-  grid-column: span 2;
+  width: 100%;
 }
 
-/* Form Styles */
+.office-cnt-lft {
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -100,25 +104,24 @@ input, select, textarea {
   border-radius: 4px;
   font-size: 16px;
   transition: var(--transition);
-  background-color:darkgrey;
+  background-color: darkgrey;
+  width: 100%;
 }
 
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px #ffffff;
-;
 }
 
-/* Form Actions */
 .actions {
   display: flex;
-  flex-direction: column; /* Stacks items vertically */
-  align-items: center;    /* Centers items horizontally */
-  text-align: center;     /* Centers the text inside the p tag */
-  gap: 16px;              /* Adds space between button and p tag */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
   margin-top: 32px;
-  width: 100%;            /* Ensures it takes full width of the card */
+  width: 100%;
 }
 
 .btn-primary {
@@ -145,7 +148,6 @@ input:focus, textarea:focus {
   margin: 0;
 }
 
-/* Info Cards (Office/Chamber) */
 .office-title {
   font-size: 20px;
   margin: 16px 0 8px 0;
@@ -192,98 +194,68 @@ address {
   padding-left: 5px;
 }
 
-/* --- Responsive Breakpoints --- */
+.ur-office-txt {
+  font-family: 'poppinsmedium';
+  width: 202px;
+  margin: -20px auto 0px;
+  background: #32261f;
+  border-radius: 5px;
+  padding: 12px 20px;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 50px;
+  box-shadow: #a3a09a 0 2px 25px;
+}
 
-/* Tablets */
+.container-custom {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* ===== RESPONSIVE: Tablet (768px - 1024px) ===== */
 @media (max-width: 1024px) {
-  .contact-layout-grid {
-    grid-template-columns: 1fr 1fr;
+  .contact-section {
+    padding: 20px 16px;
   }
-  
-  .card--main-form {
-    grid-column: span 2;
+
+  .card {
+    padding: 24px;
   }
 }
 
-/* Mobile Phones */
+/* ===== RESPONSIVE: Mobile (< 768px) ===== */
 @media (max-width: 768px) {
-  .contact-layout-grid {
+  .office-cards-row {
     grid-template-columns: 1fr;
-  }
-
-  .card--main-form, .field.full-width {
-    grid-column: span 1;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
   }
 
+  .field.full-width {
+    grid-column: span 1;
+  }
+
   .actions {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .btn-primary {
     width: 100%;
   }
-}
 
-.contact-layout-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.office-cards-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* This makes them parallel */
-  gap: 24px;
-}
-
-/* Stack parallel cards on mobile */
-@media (max-width: 768px) {
-  .office-cards-row {
-    grid-template-columns: 1fr;
+  .card {
+    padding: 20px;
   }
-}
 
-.office-cnt-lft{
-    background: #fff;
-    border-radius: 10px;
-    width: 40%;
-    /* float: left; */
-    text-align: center;
-    padding: 0px;
-    margin-right: 10%;
-}
+  .section-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
 
-.row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: ruby;
-    flex-wrap: wrap;
-    margin-top: calc(var(--bs-gutter-y) * -1);
-    margin-right: calc(var(--bs-gutter-x) * -.5);
-    /* margin-left: calc(var(--bs-gutter-x) * -.5); */
-    padding-top: 60px;
-}
-
-.ur-office-txt {
-    font-family: 'poppinsmedium';
-    width: 202px;
-    margin: -20px auto 0px;
-    background: #32261f;
-    border-radius: 5px;
-    padding: 12px 20px;
-    color: #fff;
-    text-align: center;
-    font-size: 15px;
-    margin-bottom: 50px;
-    box-shadow: #a3a09a 0 2px 25px;
-}
-
-.container-custom {
-    width: 80%;
-    margin: 0 auto;
+  .ur-office-txt {
+    width: auto;
+    max-width: 200px;
+  }
 }

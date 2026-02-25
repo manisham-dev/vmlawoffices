@@ -1,40 +1,29 @@
 
-:root {
-  --deep-copper: #8A4B27;
-  --text-strong: #1f1f1f;
-  --text: #2b2b2b;
-  --border: #1f1f1f;
-}
-
-
-
 .mega-footer__container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 clamp(16px, 3vw, 32px);
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: start;
   gap: clamp(24px, 4vw, 64px);
 }
 
-/* Right-align helper */
 .align-right,
 .align-right *:not(svg):not(path) {
-  text-align: right;
+  text-align: left;
 }
 
-/* Left column: brand */
 .mega-footer__brand {
   display: flex;
   flex-direction: column;
-  align-items: center; /* keep logo & socials centered like screenshot */
+  align-items: center;
   gap: 40px;
 }
 
 .brand__logo img {
-  width: clamp(120px, 14vw, 180px);
+  width: 100%;
+  max-width: 380px;
   height: auto;
   display: block;
 }
@@ -48,12 +37,12 @@
 .social-btn {
   width: 60px;
   height: 60px;
-  border: 2px solid var(--border);
+  border: 2px solid #111;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--border);
+  color: #111;
   text-decoration: none;
   transition: transform .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease;
 }
@@ -65,77 +54,76 @@
   background-color: #f7f7f7;
 }
 
-/* Columns */
 .mega-footer__col { display: block; }
-
 
 .mt-32 { margin-top: 32px; }
 
 .mega-list { list-style: none; padding: 0; margin: 0 0 12px 0; }
 .mega-list li { margin: 14px 0; }
 
-
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .mega-footer__container {
-    grid-template-columns: 1fr 1fr;
-  }
-  .mega-footer__brand { order: -1; margin-bottom: 12px; }
-}
-
-@media (max-width: 720px) {
-  .mega-footer__container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .brand__social { gap: 20px; }
-  .social-btn { width: 52px; height: 52px; }
-}
-
-/**/
-
-
-/* Global text improvements */
 .mega-footer {
-  background: #ffffff;           /* keep white background */
-  color: #121212;                /* darker default text (high contrast) */
+  background: #ffffff;
+  color: #121212;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings: bold + very dark */
 .mega-title {
-  color: #0e0e0e;                /* near-black */
-  font-weight: 800;              /* already bold, keep it */
-  letter-spacing: 0;             /* remove extra tracking to avoid “thin” feel */
+  color: #0e0e0e;
+  font-weight: 800;
+  letter-spacing: 0;
 }
 
-/* Lists & links: darker + a bit heavier */
 .mega-list a {
-  color: #151515;                /* darker than before */
-  font-weight: 600;              /* from 500 -> 600 for punch */
-  letter-spacing: 0;             /* remove extra tracking */
+  color: #151515;
+  font-weight: 600;
+  letter-spacing: 0;
   text-decoration: none;
 }
 
-/* Hover: high-contrast accent (optional deep copper) */
 .mega-list a:hover {
-  color: #8A4B27;                /* deep copper accent */
+  color: #8A4B27;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-/* Ensure nothing reduces opacity anywhere */
 .mega-footer, .mega-footer * {
-  opacity: 1 !important;         /* only keep if you suspect inherited opacity */
+  opacity: 1 !important;
 }
 
-/* Social buttons can stay the same, but set a crisper border/text */
-.social-btn {
-  color: #111;
-  border-color: #111;
+/* ===== RESPONSIVE: Tablet ===== */
+@media (max-width: 1024px) {
+  .mega-footer__container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mega-footer__brand {
+    grid-column: 1 / -1;
+    margin-bottom: 12px;
+  }
+
+  .brand__logo img {
+    max-width: 280px;
+  }
 }
 
+/* ===== RESPONSIVE: Mobile ===== */
+@media (max-width: 768px) {
+  .mega-footer__container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
 
+  .mega-footer__brand {
+    align-items: center;
+  }
 
+  .brand__logo img {
+    max-width: 240px;
+  }
+
+  .brand__social { gap: 20px; }
+  .social-btn { width: 48px; height: 48px; }
+  .social-btn svg { width: 22px; height: 22px; }
+}

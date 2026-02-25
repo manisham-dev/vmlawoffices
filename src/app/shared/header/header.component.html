@@ -1,70 +1,46 @@
 
 <header class="hdr">
-  <!-- <div class="container hdr__inner">
-    <a class="brand" routerLink="/">Your Law Firm</a>
-
-    <nav class="nav" aria-label="Primary">
-      <ul class="nav-list">
-        <li><a routerLink="/about">About</a></li>
-
-        
-<li class="has-dropdown">
-  <a class="toplink" routerLink="/practice-areas" aria-haspopup="true" aria-expanded="false">
-    Practice Areas
-  </a>
-  <ul class="practice-list" role="menu" aria-label="Practice Areas submenu">
-    <li role="menuitem"><a routerLink="/practice-areas/arbitration" fragment="arbitration">Arbitration</a></li>
-    <li role="menuitem"><a routerLink="/practice-areas" fragment="commercial-litigation">Commercial Litigation</a></li>
-    <li role="menuitem"><a routerLink="/practice-areas" fragment="competition-law">Competition Law</a></li>
-    <li role="menuitem"><a routerLink="/practice-areas" fragment="corporate-insolvency">Corporate and Insolvency Laws</a></li>
-    <li role="menuitem"><a routerLink="/practice-areas" fragment="constitutional-law">Constitutional Law</a></li>
-    <li role="menuitem"><a routerLink="/practice-areas" fragment="criminal-law">Criminal Law</a></li>
-    <li role="menuitem"><a routerLink="/practice-areas" fragment="environmental-law">Environmental Law</a></li>
-    <li role="menuitem"><a routerLink="/practice-areas" fragment="regulatory-litigation">Regulatory Litigation</a></li>
-    <li role="menuitem"><a routerLink="/practice-areas" fragment="mediation">Mediation</a></li>
-    <li role="menuitem"><a routerLink="/practice-areas" fragment="securities-law">Securities Law</a></li>
-    <li role="menuitem"><a routerLink="/practice-areas" fragment="tax">Tax</a></li>
-  </ul>
-</li>
-
-
-        <li><a routerLink="/leadership">Leadership</a></li>
-        <li><a routerLink="/insights">Insights</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div> -->
-
   <nav class="navbar">
-    <a href="#" class="logo">Λ</a>
-    <ul class="nav-links">
-        <li><a routerLink="/about">About</a></li>
-        <li><a routerLink="/expertise">Our Expertise</a></li>
-        <li class="has-dropdown">
-          <a class="toplink"  aria-haspopup="true" aria-expanded="false">
-            Practice Areas
-          </a>
-          <ul class="practice-list" role="menu" aria-label="Practice Areas submenu">
-  <li role="menuitem"><a routerLink="/practice-areas/arbitration">Arbitration</a></li>
-  <li role="menuitem"><a routerLink="/practice-areas/commercial-litigation">Commercial Litigation</a></li>
-  <li role="menuitem"><a routerLink="/practice-areas/competition-law">Competition Law</a></li>
-  <li role="menuitem"><a routerLink="/practice-areas/corporate-insolvency">Corporate and Insolvency Laws</a></li>
-  <li role="menuitem"><a routerLink="/practice-areas/constitutional-law">Constitutional Law</a></li>
-  <li role="menuitem"><a routerLink="/practice-areas/criminal-law">Criminal Law</a></li>
-  <li role="menuitem"><a routerLink="/practice-areas/environmental-law">Environmental Law</a></li>
-  <li role="menuitem"><a routerLink="/practice-areas/regulatory-litigation">Regulatory Litigation</a></li>
-  <li role="menuitem"><a routerLink="/practice-areas/mediation">Mediation</a></li>
-  <li role="menuitem"><a routerLink="/practice-areas/securities-law">Securities Law</a></li>
-  <li role="menuitem"><a routerLink="/practice-areas/tax">Tax</a></li>
-</ul>
+    <a routerLink="/" class="logo">
+      <img src="../../../assets/img/firmlogo.png" alt="Firm Logo" class="logo__img" />
+    </a>
 
-        </li>
-        <li><a routerLink="/leadership">Leadership</a></li>
-        <li><a routerLink="/insights">Insights</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
+    <button
+      class="hamburger"
+      [class.active]="menuOpen()"
+      (click)="toggleMenu()"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="menuOpen()">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+
+    <ul class="nav-links" [class.open]="menuOpen()">
+      <li><a routerLink="/about" (click)="closeMenu()">About</a></li>
+      <li><a routerLink="/expertise" (click)="closeMenu()">Our Expertise</a></li>
+      <li class="has-dropdown" [class.dropdown-open]="dropdownOpen()">
+        <a class="toplink"
+           (click)="toggleDropdown($event)"
+           aria-haspopup="true"
+           [attr.aria-expanded]="dropdownOpen()">
+          Practice Areas
+        </a>
+        <ul class="practice-list" role="menu" aria-label="Practice Areas submenu">
+          <li role="menuitem"><a routerLink="/practice-areas/arbitration" (click)="closeMenu()">Arbitration</a></li>
+          <li role="menuitem"><a routerLink="/practice-areas/commercial-litigation" (click)="closeMenu()">Commercial Litigation</a></li>
+          <li role="menuitem"><a routerLink="/practice-areas/competition-law" (click)="closeMenu()">Competition Law</a></li>
+          <li role="menuitem"><a routerLink="/practice-areas/corporate-insolvency" (click)="closeMenu()">Corporate and Insolvency Laws</a></li>
+          <li role="menuitem"><a routerLink="/practice-areas/constitutional-law" (click)="closeMenu()">Constitutional Law</a></li>
+        </ul>
+      </li>
+      <li><a routerLink="/leadership" (click)="closeMenu()">Leadership</a></li>
+      <li><a routerLink="/insights" (click)="closeMenu()">Insights</a></li>
+      <li><a routerLink="/contact" (click)="closeMenu()">Contact</a></li>
     </ul>
+
     <div class="search-container">
-        <input type="text" class="search-box" placeholder="Search...">
+      <input type="text" class="search-box" placeholder="Search..." aria-label="Search">
     </div>
-</nav>
+  </nav>
 </header>
